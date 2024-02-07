@@ -1,0 +1,94 @@
+[gd_scene load_steps=7 format=3 uid="uid://cr53gp80m8nvo"]
+
+[ext_resource type="Texture2D" uid="uid://rrcwfwkbhpt1" path="res://textures/dev/grids/Dark/texture_07.png" id="1_qygaf"]
+[ext_resource type="PackedScene" uid="uid://c8fsxra6rc60g" path="res://scenes/spider_bot.tscn" id="2_wgf0m"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1kbr6"]
+sky_top_color = Color(0, 0.67451, 0.937255, 1)
+sky_horizon_color = Color(0.75, 0.918627, 0.984314, 1)
+ground_bottom_color = Color(1, 1, 1, 1)
+ground_horizon_color = Color(0.75, 0.918627, 0.984314, 1)
+
+[sub_resource type="Sky" id="Sky_5wvxn"]
+sky_material = SubResource("ProceduralSkyMaterial_1kbr6")
+
+[sub_resource type="Environment" id="Environment_k5dwx"]
+background_mode = 2
+sky = SubResource("Sky_5wvxn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v5wwq"]
+albedo_texture = ExtResource("1_qygaf")
+uv1_scale = Vector3(6.25, 6.25, 6.25)
+
+[node name="Scene" type="Node3D"]
+
+[node name="Env" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
+metadata/_edit_lock_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Env"]
+environment = SubResource("Environment_k5dwx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Stage" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18.6457, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+use_collision = true
+size = Vector3(50, 1, 50)
+material = SubResource("StandardMaterial3D_v5wwq")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8813, 0.638733, 0)
+use_collision = true
+size = Vector3(14.2374, 5.27747, 50)
+material = SubResource("StandardMaterial3D_v5wwq")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3181, 2.32986, 0)
+use_collision = true
+size = Vector3(9.3638, 8.65973, 50)
+material = SubResource("StandardMaterial3D_v5wwq")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
+use_collision = true
+radius = 10.1
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11, -25)
+use_collision = true
+radius = 2.0
+height = 100.0
+
+[node name="Stage2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -70.6457, -29)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stage2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+use_collision = true
+size = Vector3(50, 1, 50)
+material = SubResource("StandardMaterial3D_v5wwq")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Stage2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8813, 0.638733, 0)
+use_collision = true
+size = Vector3(14.2374, 5.27747, 50)
+material = SubResource("StandardMaterial3D_v5wwq")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Stage2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3181, 2.32986, 0)
+use_collision = true
+size = Vector3(9.3638, 8.65973, 50)
+material = SubResource("StandardMaterial3D_v5wwq")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Stage2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
+use_collision = true
+radius = 10.1
+
+[node name="spider_bot_model" parent="." instance=ExtResource("2_wgf0m")]

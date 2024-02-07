@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://baacvmyjrinu"]
+
+[ext_resource type="Script" path="res://scripts/pauseMenu.gd" id="1_g8py4"]
+
+[node name="Pause" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g8py4")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 79.0
+offset_bottom = 101.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="resume" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "RESUME"
+
+[node name="options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "OPTIONS"
+
+[node name="endTrip" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "END TRIP"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/endTrip" to="." method="_on_endTrip_pressed"]
