@@ -5,5 +5,5 @@ extends RayCast3D
 func _physics_process(delta):
 	if is_colliding():
 		#print("Hit!")
-		#print(get_collision_point())
+		print(get_collider())
 		step_target.global_position = get_collision_point()

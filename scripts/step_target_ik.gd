@@ -1,15 +1,15 @@
 extends Marker3D
 
 @export var stepTarget: Node3D
-@export var stepDist = 3.0
+@export var stepDist = 0.75
 @export var adjacentTarget: Node3D
-@export var oppositeTarget: Node3D
+#@export var oppositeTarget: Node3D
 var stepping = false
 
 func _process(delta):
 	if !stepping && !adjacentTarget.stepping && abs(global_position.distance_to(stepTarget.global_position)) > stepDist:
 		step()
-		oppositeTarget.step()
+		#oppositeTarget.step()
 
 func step():
 	var targetPos = stepTarget.global_position

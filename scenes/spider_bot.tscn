@@ -419,37 +419,33 @@ magnet = Vector3(0, 5, 0)
 target_node = NodePath("../../target_BR")
 script = ExtResource("2_3vb67")
 
-[node name="target_FL" type="Marker3D" parent="Armature" node_paths=PackedStringArray("stepTarget", "adjacentTarget", "oppositeTarget")]
+[node name="target_FL" type="Marker3D" parent="Armature" node_paths=PackedStringArray("stepTarget", "adjacentTarget")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.26923, -2.652, -3.36153)
 top_level = true
 script = ExtResource("2_rwnma")
 stepTarget = NodePath("../../step_targets/target_step_FL")
 adjacentTarget = NodePath("../target_FR")
-oppositeTarget = NodePath("../target_BR")
 
-[node name="target_FR" type="Marker3D" parent="Armature" node_paths=PackedStringArray("stepTarget", "adjacentTarget", "oppositeTarget")]
+[node name="target_FR" type="Marker3D" parent="Armature" node_paths=PackedStringArray("stepTarget", "adjacentTarget")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.24005, -2.65171, -3.33555)
 top_level = true
 script = ExtResource("2_rwnma")
 stepTarget = NodePath("../../step_targets/target_step_FR")
 adjacentTarget = NodePath("../target_FL")
-oppositeTarget = NodePath("../target_BL")
 
-[node name="target_BL" type="Marker3D" parent="Armature" node_paths=PackedStringArray("stepTarget", "adjacentTarget", "oppositeTarget")]
+[node name="target_BL" type="Marker3D" parent="Armature" node_paths=PackedStringArray("stepTarget", "adjacentTarget")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.24295, -2.65171, 3.33267)
 top_level = true
 script = ExtResource("2_rwnma")
 stepTarget = NodePath("../../step_targets/target_step_BL")
 adjacentTarget = NodePath("../target_BR")
-oppositeTarget = NodePath("../target_FR")
 
-[node name="target_BR" type="Marker3D" parent="Armature" node_paths=PackedStringArray("stepTarget", "adjacentTarget", "oppositeTarget")]
+[node name="target_BR" type="Marker3D" parent="Armature" node_paths=PackedStringArray("stepTarget", "adjacentTarget")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.24005, -2.65171, 3.33267)
 top_level = true
 script = ExtResource("2_rwnma")
 stepTarget = NodePath("../../step_targets/target_step_BR")
 adjacentTarget = NodePath("../target_BL")
-oppositeTarget = NodePath("../target_FL")
 
 [node name="step_targets" type="Node3D" parent="."]
 script = ExtResource("4_sv84b")
