@@ -214,6 +214,7 @@ func _physics_process(delta):
 			# sliding movement - add 0.25 to never stop moving
 			speed_current = (slide_timer + 0.25) * slide_speed
 			speed_current = (slide_timer + 0.25) * slide_speed
+		
 		# current movement
 		if direction:
 			velocity.x = direction.x * speed_current
